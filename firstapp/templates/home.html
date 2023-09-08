@@ -1,4 +1,27 @@
 {% extends "base.html" %} {% block content %} Home Page
 <h1>This is Home Page</h1>
+{{data}} {% if data %}
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">First</th>
+      <th scope="col">Last</th>
+      <th scope="col">Handle</th>
+    </tr>
+  </thead>
 
-{% endblock content %}
+  <tbody>
+    {% for single in data %}
+    <tr>
+      <td>{{single.name}}</td>
+      <td>{{single.roll}}</td>
+    </tr>
+
+    {% endfor %}
+  </tbody>
+</table>
+{% else %}
+
+<h2>No data Availabale</h2>
+{% endif %} {% endblock content %}
