@@ -16,6 +16,11 @@
     <tr>
       <td>{{single.name}}</td>
       <td>{{single.roll}}</td>
+      <td>
+        <a class="btn btn-danger" href="{% url 'delete_student' single.roll %}"
+          >Delete</a
+        >
+      </td>
     </tr>
 
     {% endfor %}
